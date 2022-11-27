@@ -1,11 +1,15 @@
-import tkinter
+import tkinter 
+from tkinter import * 
 import sys
 import os
-import time
+from time import sleep
 import grovepi
+from PIL import ImageTk, Image
 
-y= 0
+
+
 def fotozeigen():
+  y=0
     
   if os.environ.get('DISPLAY', '') == '':
     # print('no display found. using: 0.0')
@@ -13,10 +17,20 @@ def fotozeigen():
     master = tkinter.Tk()
     master.title("Dein/Euer Foto")
     master.geometry("800x420")
-    ImageTk.PhotoImage(Image.open("'Bilder/image'+str(y)+'.jpg'"))
-    img = tkinter.Label(master, 'Bilder/image'+str(y)+'.jpg')
-    frame = Frame(win, width=600, height=400)
-    frame.pack()
-    frame.place(anchor='center', relx=0.5, rely=0.5)
+ 
+    test = Image.open('Bilder/image' +str (y) + '.jpg') 
   
-  label1.pack()
+    #test.show()
+
+    y+=1
+    print (y)
+   
+
+
+  run = True 
+  while run:
+    master.update_idletasks()
+    master.update()
+
+  
+fotozeigen()

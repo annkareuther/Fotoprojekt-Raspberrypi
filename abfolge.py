@@ -1,6 +1,8 @@
 
 import bildschirm 
 import takesavephoto
+from time import sleep
+ 
 
 # welcomefenster anzeigen
 # bei gedrückten Button welcomefenster weg und Live- Übertragung zeigen
@@ -8,10 +10,13 @@ import takesavephoto
 # Foto anzeigen paar Sekunden 
 # WelcomeFenster wieder
 
-
-while True:
+run = True
+while run:
     bildschirm.startbildschirm()
     takesavephoto.fotoaufnehmen()
+    sleep (5)
+
+
 
 print('start')
 
